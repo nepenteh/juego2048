@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Juego 2048
+{% endblock %}
+
+{% block body %}
+
+<div class="marco shadow-lg">
+	<table class="tablero table" id="tablero">
+		{% for fila in tablero.getTablero() %}
+			<tr>
+				{% for val in fila %}
+					<td>
+                        {% if val!=0 %}
+                        <div class="ficha num{{ val }}">
+							{{ (val==0) ? ' ' : val }}
+						</div>
+                        {% else %}
+                        <div class="vacia">
+							
+						</div>
+                        {% endif %}
+						
+					</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+	</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% block title %}Juego 2048
+			{% endblock %}
+		</title>
+		<link
+		rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+		{# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('app') }}
+		{% endblock %}		
+	</head>
+	<nav class="menu navbar navbar-light shadow">
+		<div class="container-fluid justify-content-center">
+			<span class="navbar-brand">JUEGO 2048</span>
+			<div class="opciones">
+				<a class="nav-link d-inline-block mx-3" href="#" id="nuevo-juego">Nuevo Juego</a>
+				<a class="nav-link d-inline-block mx-3" href="https://github.com/nepenteh/juego2048php" target="_blank">Descargar Código</a>
+				<a class="nav-link d-inline-block mx-3" href="https://www.ejerciciosmesa.com" target="_blank">ejerciciosmesa.com</a>
+			</div>
+		</div>
+	</nav>
+
+	<body>
+		{% block body %}{% endblock %}
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</body>
+</html>
