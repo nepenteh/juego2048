@@ -20,5 +20,5 @@ document.onkeyup = function(evt) {
 };
 
 document.getElementById("nuevo-juego").onclick = function(evt) {
-    window.location = window.location.origin;
+    window.location = window.location.origin + "/nuevo";
 }

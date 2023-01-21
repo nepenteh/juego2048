@@ -23,6 +23,23 @@ class PrincipalController extends AbstractController
     #[Route('/', name: 'app_principal')]
     public function index(): Response
     {
+        
+        $session = $this->requestStack->getSession();
+        $tablero = $session->get('tablero');
+        if(!$tablero) {
+            $tablero = new Tablero();
+            $session->set('tablero',$tablero);
+        }
+            
+        
+        return $this->render('principal/index.html.twig', [            
+            'tablero' => $tablero,
+        ]);
+    }
+
+    #[Route('/nuevo', name: 'app_nuevo')]
+    public function nuevo(): Response
+    {
         $tablero = new Tablero();  
 
         $session = $this->requestStack->getSession();
