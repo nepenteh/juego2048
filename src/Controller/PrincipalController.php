@@ -52,10 +52,10 @@ class PrincipalController extends AbstractController
 
     #[Route('/d', name: 'app_derecha')]
     public function mueveDerecha(): Response
-    {       
-        $session = $this->requestStack->getSession();
-        $tablero = $session->get('tablero');
-        $tablero->mueveDerecha();
+    {   
+        $tablero = $this->obtenerTablero();
+        if(!$tablero) return $this->redirectToRoute('app_nuevo');
+        if(!$tablero->finPartida()) $tablero->mueveDerecha();
         return $this->render('principal/index.html.twig', [
             'tablero' => $tablero,
         ]);
@@ -64,9 +64,9 @@ class PrincipalController extends AbstractController
     #[Route('/i', name: 'app_izquierda')]
     public function mueveIzquierda(): Response
     {       
-        $session = $this->requestStack->getSession();
-        $tablero = $session->get('tablero');
-        $tablero->mueveIzquierda();
+        $tablero = $this->obtenerTablero();
+        if(!$tablero) return $this->redirectToRoute('app_nuevo');
+        if(!$tablero->finPartida()) $tablero->mueveIzquierda();
         return $this->render('principal/index.html.twig', [
             'tablero' => $tablero,
         ]);
@@ -75,9 +75,9 @@ class PrincipalController extends AbstractController
     #[Route('/a', name: 'app_arriba')]
     public function mueveArriba(): Response
     {       
-        $session = $this->requestStack->getSession();
-        $tablero = $session->get('tablero');
-        $tablero->mueveArriba();
+        $tablero = $this->obtenerTablero();
+        if(!$tablero) return $this->redirectToRoute('app_nuevo');
+        if(!$tablero->finPartida()) $tablero->mueveArriba();
         return $this->render('principal/index.html.twig', [
             'tablero' => $tablero,
         ]);
@@ -86,11 +86,18 @@ class PrincipalController extends AbstractController
     #[Route('/b', name: 'app_abajo')]
     public function mueveAbajo(): Response
     {       
-        $session = $this->requestStack->getSession();
-        $tablero = $session->get('tablero');
-        $tablero->mueveAbajo();
+        $tablero = $this->obtenerTablero();
+        if(!$tablero) return $this->redirectToRoute('app_nuevo');
+        if(!$tablero->finPartida()) $tablero->mueveAbajo();
         return $this->render('principal/index.html.twig', [
             'tablero' => $tablero,
         ]);
+    }
+
+    private function obtenerTablero(): Tablero
+    {
+        $session = $this->requestStack->getSession();
+        $tablero = $session->get('tablero');
+        return $tablero;
     }
 }

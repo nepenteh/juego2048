@@ -11,7 +11,10 @@ import './styles/app.scss';
 // start the Stimulus application
 import './bootstrap';
 
+window.bootstrap = require('bootstrap/dist/js/bootstrap.bundle.js');
+
 const $ = require('jquery');
 require('bootstrap');
 
+import './dialogos.js';
 import './interacciones.js';

@@ -74,6 +74,22 @@ class Tablero implements \Serializable
         return $n;
     }
 
+    private function noMovimientos(): bool
+    {
+        for($f=0;$f<self::FIL-1;$f++)
+            for($c=0;$c<self::COL-1;$c++)
+                if($this->tablero[$f][$c] == $this->tablero[$f+1][$c] ||
+                   $this->tablero[$f][$c] == $this->tablero[$f][$c+1])
+                    return false;
+        for($f=0;$f<self::FIL-1;$f++)
+            if($this->tablero[$f][self::COL-1] == $this->tablero[$f+1][self::COL-1])
+                return false;
+        for($c=0;$c<self::COL-1;$c++)
+            if($this->tablero[self::FIL-1][$c] == $this->tablero[self::FIL-1][$c+1])
+                return false;
+        return true;
+    }
+
     private function ponerDos()
     {
         do {
@@ -99,7 +115,7 @@ class Tablero implements \Serializable
 
     public function finPartida(): bool
     {
-        return ($this->ganador() || $this->vacias() == 0);
+        return ($this->ganador() || ($this->vacias() == 0 && $this->noMovimientos()));
     }
    
     public function mueveAbajo():void

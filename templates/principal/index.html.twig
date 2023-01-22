@@ -3,7 +3,7 @@
 {% block title %}Juego 2048
 {% endblock %}
 
-{% block body %}
+{% block tablero %}
 
 <div class="marco shadow-lg">
 	<table class="tablero table" id="tablero">
@@ -26,6 +26,17 @@
 			</tr>
 		{% endfor %}
 	</table>
+	
+	</div>
+	<div>
+		{% if tablero.finPartida() %}
+	
+		{% if tablero.ganador() %}
+			<h3 class="ganador">¡Has Ganado!</h3>
+		{% else %}
+			<h3 class="finpartida">¡No quedan movimientos!</h3>
+		{% endif %}
+	{% endif %}
 	</div>
 
 {% endblock %}
