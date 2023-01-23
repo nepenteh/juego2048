@@ -3,19 +3,19 @@ document.onkeyup = function(evt) {
     switch(evt.code) {
         case "ArrowLeft":
             evt.preventDefault();
-            window.location = window.location.origin + "/i";
+            window.location = window.location.origin + "/izquierda";
             break;
         case "ArrowUp":
             evt.preventDefault();
-            window.location = window.location.origin + "/a";
+            window.location = window.location.origin + "/arriba";
             break;
         case "ArrowRight":
             evt.preventDefault();
-            window.location = window.location.origin + "/d";
+            window.location = window.location.origin + "/derecha";
             break;
         case "ArrowDown":
             evt.preventDefault();
-            window.location = window.location.origin + "/b";
+            window.location = window.location.origin + "/abajo";
     }                
 };
 

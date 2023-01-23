@@ -38,5 +38,27 @@
 		{% endif %}
 	{% endif %}
 	</div>
+	<div class="cursores">
+		<table class="tablacursores table table-bordered">
+			<tr>
+				<td rowspan="2" class="align-middle text-end">
+					<a href="{{ url('app_izquierda') }}">◁</a>
+				</td>
+				<td class="text-center">
+					<a href="{{ url('app_arriba') }}">△</a>
+				</td>
+				<td rowspan="2" class="align-middle text-start">
+					<a href="{{ url('app_derecha') }}">▷</a>
+				</td>
+			</tr>
+			<tr>				
+				<td class="text-center">
+					<a href="{{ url('app_abajo') }}">▽</a>
+				</td>
+			</tr>
+			
+			
+		</table>
+	</div>
 
 {% endblock %}

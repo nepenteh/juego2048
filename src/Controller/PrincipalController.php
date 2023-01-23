@@ -50,45 +50,45 @@ class PrincipalController extends AbstractController
         ]);
     }
 
-    #[Route('/d', name: 'app_derecha')]
+    #[Route('/derecha', name: 'app_derecha')]
     public function mueveDerecha(): Response
     {   
         $tablero = $this->obtenerTablero();
         if(!$tablero) return $this->redirectToRoute('app_nuevo');
-        if(!$tablero->finPartida()) $tablero->mueveDerecha();
+        if($tablero->vacias()>0 || !$tablero->noUnionesDerecha()) $tablero->mueveDerecha();
         return $this->render('principal/index.html.twig', [
             'tablero' => $tablero,
         ]);
     }
 
-    #[Route('/i', name: 'app_izquierda')]
+    #[Route('/izquierda', name: 'app_izquierda')]
     public function mueveIzquierda(): Response
     {       
         $tablero = $this->obtenerTablero();
         if(!$tablero) return $this->redirectToRoute('app_nuevo');
-        if(!$tablero->finPartida()) $tablero->mueveIzquierda();
+        if($tablero->vacias()>0 || !$tablero->noUnionesDerecha()) $tablero->mueveIzquierda();
         return $this->render('principal/index.html.twig', [
             'tablero' => $tablero,
         ]);
     }
 
-    #[Route('/a', name: 'app_arriba')]
+    #[Route('/arriba', name: 'app_arriba')]
     public function mueveArriba(): Response
     {       
         $tablero = $this->obtenerTablero();
         if(!$tablero) return $this->redirectToRoute('app_nuevo');
-        if(!$tablero->finPartida()) $tablero->mueveArriba();
+        if($tablero->vacias()>0 || !$tablero->noUnionesAbajo()) $tablero->mueveArriba();
         return $this->render('principal/index.html.twig', [
             'tablero' => $tablero,
         ]);
     }
 
-    #[Route('/b', name: 'app_abajo')]
+    #[Route('/abajo', name: 'app_abajo')]
     public function mueveAbajo(): Response
     {       
         $tablero = $this->obtenerTablero();
         if(!$tablero) return $this->redirectToRoute('app_nuevo');
-        if(!$tablero->finPartida()) $tablero->mueveAbajo();
+        if($tablero->vacias()>0 || !$tablero->noUnionesAbajo()) $tablero->mueveAbajo();
         return $this->render('principal/index.html.twig', [
             'tablero' => $tablero,
         ]);

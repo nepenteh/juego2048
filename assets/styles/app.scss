@@ -13,8 +13,8 @@ body {
 }
 
 .marco {
-    width: 400px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
     margin: 30px auto;
     padding: 0px;
     background-color: rgb(187, 176, 176);
@@ -24,8 +24,8 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 35px;
     margin: 0px auto;
-    width:400px;
-    height:400px;
+    width:250px;
+    height:250px;
 }
 
 .tablero td {
@@ -127,5 +127,32 @@ body {
 }
 
 .ganador {
+    color: #b13d71;
+}
+
+.cursores {
+    width: 200px;
+    height: 100px;
+    margin: auto;
+}
+
+.tablacursores {
+    width:200px;
+    height:100px;
+}
+
+.tablacursores td {
+    padding: 2px;
+    margin: 0px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tablacursores a {
+    text-decoration: none;
+    color: black;
+}
+
+.tablacursores a:hover {
     color: #b13d71;
 }
