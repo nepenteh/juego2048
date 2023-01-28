@@ -4,9 +4,13 @@
 ### Programación del Juego 2048 usando PHP y Symfony
 
 El Juego 2048 consiste en un tablero de 4x4 celdas en las que inicialmente se colocan dos fichas con el número 2.
+
 El jugador puede mover en las cuatro direcciones (arriba, abajo, izquierda, derecha) haciendo que todas las fichas se desplacen hacia dicha dirección.
+
 Cuando dos fichas con el mismo valor chocan, el resultado es que se unen en una nueva ficha con el doble del valor.
+
 El objetivo del juego es ir uniendo fichas hasta conseguir una con el valor 2048.
+
 Si el tablero queda completamente relleno sin posibilidad de mover para hacer nuevos huecos, el juego finaliza y el jugador pierde.
 
 
