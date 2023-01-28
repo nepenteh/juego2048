@@ -1,3 +1,8 @@
+/**
+ * Interacciones básicas con pulsación de teclas
+ */
+
+
 document.onkeyup = function(evt) {
     evt.preventDefault();
     switch(evt.code) {
@@ -22,6 +27,7 @@ document.onkeyup = function(evt) {
 document.getElementById("nuevo-juego").onclick = function(evt) {
     window.mostrarDialogo("Nuevo Juego","¿Empezar nuevo juego?","Aceptar",window.location.origin + "/nuevo");
 }
+
 
 
 

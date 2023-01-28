@@ -12,6 +12,39 @@ body {
     color: white;
 }
 
+.menu .opciones {
+    display: flex;
+    justify-content: center;
+}
+
+.opciones a {
+    text-align:center;
+}
+
+@media (max-width: 500px) {
+    .interiormenu {
+        display:block!important;
+        width:100%
+    }
+
+    .navbar-brand {
+        display: block;
+        width:100%;
+        text-align:center;
+        margin:0px!important;
+    }
+    .opciones {
+        display: block!important;
+        width:100%;
+    }
+    .opciones a {
+      display: block!important;
+      width:100%;
+      margin:2px auto!important;
+      padding:0px;
+    }
+  }
+
 .marco {
     width: 250px;
     height: 250px;
